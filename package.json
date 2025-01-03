@@ -5,7 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:production": "ng build --configuration production --base-href /angular-env/",
     "watch": "ng build --watch --configuration development",
+    "deploy": "ng deploy --base-href=/angular-env/ --repo=https://github.com/aboudard/angular-env.git --dir=dist/angular-env --no-nojekyll",
     "test": "ng test"
   },
   "private": true,

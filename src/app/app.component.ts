@@ -11,6 +11,6 @@ import { JsonPipe } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'testEnv';
+  title = 'angular-env';
   environment = environment;
 }

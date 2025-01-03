@@ -1,11 +1,30 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
+env:
+  MY_VAR: ${{ vars.MY_VAR }}
 jobs:
-  Explore-GitHub-Actions:
+  build-and-deploy:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [20.x]
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Use variables
+        run: |
+          echo "MY_VAR : ${{ vars.MY_VAR }}"
+
+      - name: Install and build
+        run: |
+          npm install
+          npm run build:production
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/angular-env
+          token: ${{ secrets.GH_TOKEN }}
