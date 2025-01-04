@@ -13,7 +13,7 @@ ng deploy --base-href=/angular-env/ --repo=https://github.com/aboudard/angular-e
 
 On linux, you can set environment variables with the following command:
 ```bash
-iexport MY_VAR=theVar
+export MY_VAR=theVar
 ```
 
 On windows, you can set environment variables with the following command:
