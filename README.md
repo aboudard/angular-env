@@ -20,3 +20,20 @@ On windows, you can set environment variables with the following command:
 ```bash
 set MY_VAR=TheVar
 ```
+## On Docker
+
+You can set environment variables in a Dockerfile with the following command:
+
+```bash
+ENV MY_VAR=theVar
+```
+
+Build the Docker image
+```bash
+docker build -t angular-env .
+```
+
+Run the Docker container
+```bash
+docker run -p 80:80 angular-env
+```
