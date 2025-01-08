@@ -1,12 +1,29 @@
 # angular-env
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+This is an example of how to use environment variables in Angular.
+We use different techniques, such as:
+- Angular environment files
+- Environment variables
+- Docker environment variables
+- Github Actions environment variables
 
 ## Deploy with github pages after a build
     
 ```bash
 ng build --configuration production --base-href=/angular-env/
 ng deploy --base-href=/angular-env/ --repo=https://github.com/aboudard/angular-env.git --dir=dist/angular-env --no-nojekyll
+```
+
+### Deploy with github actions
+
+Automatic deployment with github actions after a push on the desired branch.
+Action used : [JamesIves/github-pages-deploy-action](https://github.com/marketplace/actions/deploy-to-github-pages)
+
+```yaml
+Using the following workflow file configuration:
+```yaml
+env:
+  MY_VAR: ${{ vars.MY_VAR }}
 ```
 
 ## Using environment variables in Angular
