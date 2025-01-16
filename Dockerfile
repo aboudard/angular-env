@@ -1,7 +1,8 @@
 # Stage 1: Build the Angular application
 FROM node:20 as build
 
-ENV MY_VAR="Hello Docker"
+ARG MY_VAR="Hello Docker"
+ENV MY_VAR=${MY_VAR}
 
 WORKDIR /app
 
