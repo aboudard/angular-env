@@ -48,6 +48,8 @@ ENV MY_VAR=theVar
 Build the Docker image
 ```bash
 docker build -t angular-env .
+# Build the image and override the MY_VAR environment variable
+docker build --build-arg MY_VAR="Docker Build" -t angular-env .
 ```
 
 Run the Docker container
